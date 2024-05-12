@@ -1,0 +1,23 @@
+
+<h1 class="header">Update Product</h1>
+<%if(message){%>
+<div class="alert alert-danger" role="alert">
+    <%=message%>
+  </div>
+<%}%>
+<form action="/update-product" method="post" enctype="multipart/form-data">
+    <input type="hidden" class="form-control" id="id" name="id" value="<%=product.id%>">
+    <div class="mb-3">
+      <label for="name" class="form-label">Product Name</label>
+      <input type="text" class="form-control" id="name" name="name" value="<%=product.name%>">
+    </div>
+    <div class="mb-3">
+        <label for="discription" class="form-label">Product Discription</label>
+        <input type="text" class="form-control" id="discription" name="description" value="<%=product.description%>" >
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Product Image</label>
+        <input type="file" class="form-control" id="image" name="imageUrl" value="<%=product.imageUrl%>" accept="image/*">
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
